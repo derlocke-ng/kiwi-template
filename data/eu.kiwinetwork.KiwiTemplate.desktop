@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Kiwi Template
+GenericName=Example app
+Comment=Starting point for a Kiwi Network desktop app
+Exec=kiwi-template-gui
+Icon=eu.kiwinetwork.KiwiTemplate
+Terminal=false
+Categories=Utility;
+StartupNotify=true
+StartupWMClass=eu.kiwinetwork.KiwiTemplate
+Keywords=kiwi;template;notes;

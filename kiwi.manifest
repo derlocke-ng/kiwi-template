@@ -1,0 +1,22 @@
+# kiwi.manifest — app metadata for kiwi-updater
+NAME=kiwi-template
+DESCRIPTION=Starting point for a Kiwi Network desktop app: bash, Python, GTK 4
+VERSION=0.1.0
+AUTHOR=derlocke-ng
+HOMEPAGE=https://github.com/derlocke-ng/kiwi-template
+LICENSE=GPL-3.0-or-later
+
+COMPONENTS=cli gui
+CATEGORY=Development
+TAGS=template example gtk libadwaita kit
+
+SCOPES=user
+
+ICON=data/eu.kiwinetwork.KiwiTemplate.svg
+ABOUT=README.md
+
+# Checked with `command -v` before installing. The window needs GTK 4 and
+# libadwaita 1.5 (PyGObject); KIWI_GUI=0 installs without it.
+DEPENDS=python3 bash
+
+INSTALLER=install.sh
