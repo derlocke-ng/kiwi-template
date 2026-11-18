@@ -5,7 +5,7 @@ copied from kiwi-template, never edited in an app. An app tells it who it is
 with one `AppInfo` and gets the parts of the window that all Kiwi apps share,
 built as the [UI rules](ui-rules.md) say.
 
-This page describes kit 0.1.0.
+This page describes kit 0.1.1.
 
 ## Why a copy
 
@@ -49,7 +49,9 @@ INFO = AppInfo(
 )
 ```
 
-Optional: `docs` (the page Help opens; default: the homepage),
+Optional: `stock_colorway` (the kiwi-icons colourway of your stock icon,
+when it is not the glyph's own colour; Flat and Night of the stock choice
+are drawn in it), `docs` (the page Help opens; default: the homepage),
 `default_size` (default 1040 × 840), `min_size` (default 360 × 420).
 
 ## The modules

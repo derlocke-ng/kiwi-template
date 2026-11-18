@@ -13,7 +13,7 @@ with the filling kiwi. The **example app** around it, a list of notes, shows
 the kit in use and is what you replace with your own app. Both follow the
 [UI rules](docs/ui-rules.md), so that Kiwi apps look and behave alike.
 
-- Latest release: **v0.1.0**
+- Latest release: **v0.1.1**
 - In the [development catalog](https://github.com/derlocke-ng/kiwi-catalog-dev),
   not in the Kiwi catalog
 - Runs on: Linux with Python 3.11, GTK 4 and libadwaita 1.5; CI tests on

@@ -1,7 +1,7 @@
 # kiwi.manifest — app metadata for kiwi-updater
 NAME=kiwi-template
 DESCRIPTION=Starting point for a Kiwi Network desktop app: bash, Python, GTK 4
-VERSION=0.1.0
+VERSION=0.1.1
 AUTHOR=derlocke-ng
 HOMEPAGE=https://github.com/derlocke-ng/kiwi-template
 LICENSE=GPL-3.0-or-later

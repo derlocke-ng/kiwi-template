@@ -21,6 +21,10 @@ class AppInfo:
     homepage: str = ""  # https://github.com/…/<app>
     docs: str = ""  # the page the menu's Help opens; default: the homepage
     glyph: str | None = None  # key in kiwi_icon.GLYPHS, drawn in the app icon
+    # The colourway the stock icon is drawn in, when that is not the glyph's
+    # own hue (kiwi_icon.APP_HUES). Flat and Night of "the app's own" use it,
+    # so the three styles of the stock choice have one colour.
+    stock_colorway: str | None = None
     stock_icon: Path | None = None  # the app's stock SVG, for "back to stock"
     default_size: tuple[int, int] = (1040, 840)
     min_size: tuple[int, int] = (360, 420)

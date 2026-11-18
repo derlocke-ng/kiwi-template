@@ -86,6 +86,20 @@ def test_icon_stock_colour_own_and_back(info):
     assert icon.target(info).read_text() == "<svg>stock</svg>"
 
 
+def test_stock_choice_has_one_colour_in_every_style(info):
+    import dataclasses
+
+    from kiwi_template.kit import kiwi_icon
+
+    green = dataclasses.replace(info, stock_colorway="kiwi")
+    store = Store(green)
+    store.set("kit.icon_style", "night")
+    assert icon.apply(green, store) is None
+    assert icon.target(green).read_text() == kiwi_icon.render(
+        "plugin", colorway="kiwi", style="night", title="T App"
+    )
+
+
 def test_icon_file_cannot_leave_the_folder(info):
     store = Store(info)
     store.set("kit.icon_file", "../../etc/passwd")

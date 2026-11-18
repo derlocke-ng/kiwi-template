@@ -9,7 +9,7 @@ from pathlib import Path
 
 from .kit import AppInfo
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 APP = "kiwi-template"
 # The GTK application's id. The desktop entry and the icon are named after it,
 # which is how GNOME on Wayland connects the window to its entry.
@@ -32,6 +32,7 @@ INFO = AppInfo(
     homepage=HOMEPAGE,
     docs=f"{HOMEPAGE}/blob/main/docs/README.md",
     glyph="plugin",
+    stock_colorway="kiwi",
     stock_icon=_DATA / f"{APP_ID}.svg",
 )
 SCRIPTS = next(

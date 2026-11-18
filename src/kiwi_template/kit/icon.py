@@ -67,7 +67,9 @@ def apply(info: AppInfo, store: Store) -> str | None:
             else:
                 svg = src.read_text()
         elif color or style != "classic":
-            svg = kiwi_icon.render(info.glyph, colorway=color or None, style=style, title=info.name)
+            svg = kiwi_icon.render(
+                info.glyph, colorway=color or info.stock_colorway, style=style, title=info.name
+            )
         elif info.stock_icon and info.stock_icon.is_file():
             svg = info.stock_icon.read_text()
         else:
