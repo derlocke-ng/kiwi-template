@@ -24,5 +24,5 @@ jobs:
           cp -r . /tmp/new && cd /tmp/new
           bash tools/new-app.sh kiwi-notes "Kiwi Notes" eu.kiwinetwork.KiwiNotes someone
           bash tools/kit-check.sh && bash tools/check-version.sh
-          PYTHONPATH=src python3 -m pytest tests/unit -q
+          PYTHONPATH=src "$GITHUB_WORKSPACE/.venv/bin/python" -m pytest tests/unit -q
           test ! -e src/kiwi_template && test -f data/eu.kiwinetwork.KiwiNotes.desktop
