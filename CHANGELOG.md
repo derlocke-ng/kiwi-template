@@ -3,7 +3,7 @@
 The app's version and the kit's version (`KIT_VERSION`) are released
 together under one tag.
 
-## 0.1.2 — unreleased
+## 0.1.2 — 2026-11-19
 
 - **Kit 0.1.2: no toast for every icon change.** Choosing colours and
   styles one after the other to compare them stacked up toasts. The hint
