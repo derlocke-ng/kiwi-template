@@ -5,7 +5,7 @@ copied from kiwi-template, never edited in an app. An app tells it who it is
 with one `AppInfo` and gets the parts of the window that all Kiwi apps share,
 built as the [UI rules](ui-rules.md) say.
 
-This page describes kit 0.1.1.
+This page describes kit 0.1.2.
 
 ## Why a copy
 

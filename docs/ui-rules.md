@@ -65,6 +65,8 @@ Always, in this order:
 3. **About <App Name>**.
 
 Switches do not go in the menu; they are settings and go in Preferences.
+Buttons that act on the ticked rows of a list ("Start Selected") do not go
+in the menu either: they sit in the list's header, next to what they act on.
 
 **Decided** — when written only kiwi-fox, kiwi-proxy, kiwi-custodia and kiwi-server
 have "About". gnome-monitor keeps two switches ("Ask to Keep Changes",
@@ -184,7 +186,8 @@ written out when that module is.
 - An empty list is an `Adw.StatusPage` that says what the app is for and has
   the main action as a button.
 - A problem that blocks the app is an `Adw.Banner` with one button that
-  fixes it. A result is a toast. A question is an `Adw.AlertDialog`; a
+  fixes it. A result is a toast; a setting that visibly changed (a switch,
+  a new icon in the preview) needs none. A question is an `Adw.AlertDialog`; a
   destructive answer is red and never the default.
 
 Today: pills, chips and the grid exist in kiwi-updater; tags in kiwi-fox;

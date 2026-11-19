@@ -3,6 +3,16 @@
 The app's version and the kit's version (`KIT_VERSION`) are released
 together under one tag.
 
+## 0.1.2 — unreleased
+
+- **Kit 0.1.2: no toast for every icon change.** Choosing colours and
+  styles one after the other to compare them stacked up toasts. The hint
+  that the app grid may show the icon only after logging in again is now a
+  line under "Appearance"; a toast appears only when the icon could not be
+  changed.
+- UI rules: buttons that act on the ticked rows of a list sit in the list's
+  header, not in the main menu.
+
 ## 0.1.1 — 2026-11-19
 
 - **Kit 0.1.1: the stock icon keeps its colour in Flat and Night.** With
