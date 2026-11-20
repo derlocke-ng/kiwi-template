@@ -9,7 +9,7 @@ from pathlib import Path
 
 from .kit import AppInfo
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 APP = "kiwi-template"
 # The GTK application's id. The desktop entry and the icon are named after it,
 # which is how GNOME on Wayland connects the window to its entry.

@@ -5,7 +5,7 @@ copied from kiwi-template, never edited in an app. An app tells it who it is
 with one `AppInfo` and gets the parts of the window that all Kiwi apps share,
 built as the [UI rules](ui-rules.md) say.
 
-This page describes kit 0.1.2.
+This page describes kit 0.1.3.
 
 ## Why a copy
 
@@ -117,6 +117,7 @@ the template's `install.sh` does (`custom_icon`).
 
 ```python
 self.jobs = JobArea(self.store)       # append it at the bottom of the window
+# JobArea() without a store: for an app that keeps its settings itself
 self.jobs.run("Build the image", ["podman", "build", "."],
               steps=4, is_step=lambda line: line.startswith("STEP "),
               on_done=lambda returncode: ...)
