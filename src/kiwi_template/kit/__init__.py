@@ -14,6 +14,6 @@ Nothing in here imports the app it is copied into.
 
 from .info import AppInfo
 
-KIT_VERSION = "0.1.2"
+KIT_VERSION = "0.1.3"
 
 __all__ = ["KIT_VERSION", "AppInfo"]

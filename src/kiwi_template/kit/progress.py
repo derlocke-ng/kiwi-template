@@ -2,6 +2,7 @@
 output pane.
 
     jobs = JobArea(store)                 # append it at the bottom of the window
+                                          # (JobArea() for an app that keeps its settings itself)
     header.pack_end(jobs.output_button)   # opens and closes the output
     jobs.run("Build the image", ["podman", "build", "."],
              steps=4, is_step=lambda line: line.startswith("STEP "),
@@ -132,7 +133,10 @@ class KiwiProgress(Gtk.DrawingArea):
 class JobArea(Gtk.Box):
     """The job strip above the output pane. Hidden until a job starts."""
 
-    def __init__(self, store: Store) -> None:
+    def __init__(self, store: Store | None = None) -> None:
+        """store: the kit's settings, for "open the output when a job starts"
+        (kit.show_output). Without one the output stays as the user left it;
+        an app that is not on the kit's settings yet can take the strip so."""
         super().__init__(orientation=Gtk.Orientation.VERTICAL)
         self.store = store
         self.busy = False
@@ -192,7 +196,7 @@ class JobArea(Gtk.Box):
         self._steps, self._done = max(0, steps), 0
         self.title.set_label(label)
         self._strip.set_reveal_child(True)
-        if self.store["kit.show_output"]:
+        if self.store is not None and self.store["kit.show_output"]:
             self.output_button.set_active(True)
         self._show()
 

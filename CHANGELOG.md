@@ -3,6 +3,13 @@
 The app's version and the kit's version (`KIT_VERSION`) are released
 together under one tag.
 
+## 0.1.3 — 2026-11-20
+
+- **Kit 0.1.3: the job strip without the kit's settings.** `JobArea()` takes
+  no store: an app that keeps its settings itself (kiwi-server's, until it
+  moves onto the kit whole) can show the filling kiwi and the output pane. The
+  output then opens only when a job fails, or by its button.
+
 ## 0.1.2 — 2026-11-19
 
 - **Kit 0.1.2: no toast for every icon change.** Choosing colours and
