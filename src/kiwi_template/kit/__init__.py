@@ -6,14 +6,14 @@ tools/kit-check.sh. Change it there, never in an app.
 
 It implements docs/ui-rules.md. An app tells the kit who it is with one
 `AppInfo` and gets the header bar, the menu, About, Preferences (Appearance,
-Window), the remembered window size, the settings file, the worker and the
-job strip with the filling kiwi.
+Window), the remembered window size, the settings file, the worker, the
+job strip with the filling kiwi, and the notice bar under the header.
 
 Nothing in here imports the app it is copied into.
 """
 
 from .info import AppInfo
 
-KIT_VERSION = "0.1.3"
+KIT_VERSION = "0.1.4"
 
 __all__ = ["KIT_VERSION", "AppInfo"]

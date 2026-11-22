@@ -3,6 +3,17 @@
 The app's version and the kit's version (`KIT_VERSION`) are released
 together under one tag.
 
+## 0.1.4 — 2026-11-22
+
+- **Kit 0.1.4: the notice bar** (`kit.notice.Notice`), under the header: a line
+  of news the user may act on, one button, and ✕. ✕ hides it until the news
+  changes. The first use: Kiwi Proxy, Kiwi Fox and Kiwi Custodia say when the
+  snapshot folder holds newer copies, with **Import**. Adw.Banner has one
+  button and no ✕, so the kit has its own; it looks like one and works on
+  libadwaita 1.5.
+- UI rules (9): a notice is for news, a banner for a problem that blocks.
+- The example app: **Show the Demo Notice** in the menu.
+
 ## 0.1.3 — 2026-11-20
 
 - **Kit 0.1.3: the job strip without the kit's settings.** `JobArea()` takes

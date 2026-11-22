@@ -2,7 +2,7 @@
 
 What is the kit's and what is the app's:
   kit   header bar, menu, About, Preferences (Appearance, Window), window
-        size, settings file, job strip, output pane
+        size, settings file, job strip, output pane, notice bar
   app   the list, the "New Note" dialog, the app's own Preferences group
 """
 
@@ -13,6 +13,7 @@ from gi.repository import Adw, Gio, GLib, Gtk
 from .. import INFO, SCRIPTS
 from ..core import notes
 from ..kit import geometry, header, worker
+from ..kit.notice import Notice
 from ..kit.prefs import Preferences
 from ..kit.progress import JobArea
 from ..kit.settings import Store
@@ -30,6 +31,9 @@ class Window(Adw.ApplicationWindow):
         demo = Gio.SimpleAction.new("demo-job", None)
         demo.connect("activate", lambda *_a: self.run_demo())
         self.add_action(demo)
+        news = Gio.SimpleAction.new("demo-notice", None)
+        news.connect("activate", lambda *_a: self.demo_notice())
+        self.add_action(news)
 
         self.jobs = JobArea(self.store)
         self.header = header.build(
@@ -38,7 +42,10 @@ class Window(Adw.ApplicationWindow):
             main=("New Note", "list-add-symbolic", self.new_note),
             on_refresh=self.refresh,
             on_preferences=self.open_preferences,
-            menu_actions=[("Run the Demo Job", "win.demo-job")],
+            menu_actions=[
+                ("Run the Demo Job", "win.demo-job"),
+                ("Show the Demo Notice", "win.demo-notice"),
+            ],
             extra_end=[self.jobs.output_button],
         )
 
@@ -74,6 +81,8 @@ class Window(Adw.ApplicationWindow):
         self.toasts.set_child(body)
         view = Adw.ToolbarView(content=self.toasts)
         view.add_top_bar(self.header)
+        self.notice = Notice()  # under the header: news to act on, with ✕
+        view.add_top_bar(self.notice)
         self.set_content(view)
         self.refresh()
 
@@ -136,6 +145,15 @@ class Window(Adw.ApplicationWindow):
             steps=steps,
             is_step=lambda line: line.startswith("step "),
             on_done=lambda rc: self.toast("Demo job finished" if rc == 0 else "Demo job failed"),
+        )
+
+    # ── a notice ──────────────────────────────────────────────────────────
+    def demo_notice(self) -> None:
+        """What an app says when, say, its snapshot folder has newer copies."""
+        self.notice.say(
+            "A newer copy of your notes is in the snapshot folder",
+            "Import",
+            lambda: self.toast("Imported (a demo: nothing changed)"),
         )
 
     # ── preferences ───────────────────────────────────────────────────────
