@@ -1,6 +1,13 @@
 """The notice bar: says, hides with ✕ until the news changes, runs its button."""
 
+import os
+
 import pytest
+
+if not (os.environ.get("WAYLAND_DISPLAY") or os.environ.get("DISPLAY")):
+    # Without a display GTK may still say it initialised and then crash in
+    # the first widget (CI did); CI runs this under xvfb-run.
+    pytest.skip("no display", allow_module_level=True)
 
 gi = pytest.importorskip("gi", exc_type=ImportError)
 gi.require_version("Gtk", "4.0")
