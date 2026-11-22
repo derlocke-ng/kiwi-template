@@ -67,6 +67,7 @@ are drawn in it), `docs` (the page Help opens; default: the homepage),
 | `prefs` | `Preferences`: General with Appearance and Window | 5 |
 | `icon` | the app icon the user chose, written for the desktop | 6 |
 | `progress` | `JobArea`: job strip, filling kiwi, output pane | 10 |
+| `notice` | `Notice`: news under the header, one button and ✕ | 9 |
 | `kiwi_icon` | [kiwi-icons](https://github.com/derlocke-ng/kiwi-icons)' kit, unchanged | 6 |
 
 ### Settings
@@ -112,6 +113,21 @@ While Working". Further pages: `dialog.add(page)`.
 
 The installer must leave the installed icon alone when the user chose one;
 the template's `install.sh` does (`custom_icon`).
+
+### Notice
+
+```python
+self.notice = Notice()
+view.add_top_bar(self.header)
+view.add_top_bar(self.notice)         # under the header
+self.notice.say("2 newer snapshots in your folder: work, shop", "Import",
+                self.import_newer, key=("work@3f2a", "shop@91bc"))
+self.notice.clear()                   # the news is gone
+```
+
+✕ hides the notice until `say` gets another `key`; the same key stays hidden,
+so an app can call `say` on every refresh. The button runs its action and
+clears the notice.
 
 ### Jobs
 

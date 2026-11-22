@@ -186,12 +186,16 @@ written out when that module is.
 - An empty list is an `Adw.StatusPage` that says what the app is for and has
   the main action as a button.
 - A problem that blocks the app is an `Adw.Banner` with one button that
-  fixes it. A result is a toast; a setting that visibly changed (a switch,
+  fixes it. News the user may want to act on, now or later, is the kit's
+  notice under the header: one line, one button, and ✕ (newer snapshots in
+  the folder: "2 newer snapshots in your folder: work, shop · Import · ✕").
+  ✕ hides it until the news changes. A result is a toast; a setting that visibly changed (a switch,
   a new icon in the preview) needs none. A question is an `Adw.AlertDialog`; a
   destructive answer is red and never the default.
 
 Today: pills, chips and the grid exist in kiwi-updater; tags in kiwi-fox;
-banners, toasts and alert dialogs are already used the same way in most apps.
+banners, toasts and alert dialogs are already used the same way in most apps;
+the notice for newer snapshots in Kiwi Proxy, Kiwi Fox and Kiwi Custodia.
 
 ## 10. Work in progress
 
